@@ -1,0 +1,266 @@
+/**************************
+*	Table of contents:
+*	_0 = Base structure
+*	_1 = Header
+*	_2 = Content
+*	_3 = Games
+*	_4 = Game detail
+*	_5 = Library
+*	_6 = RangeSlider	
+**************************/
+
+/**************************
+*	CREDIT:
+*	Sidebar and Header contain CSS from a Bootstrap example:
+*	http://getbootstrap.com/examples/dashboard/	
+**************************/
+
+/**************************
+*	_0 = BASE STRUCTURE
+**************************/
+
+body {
+	padding-top: 50px; /* because of the fixed sidebar */
+	font-family: Roboto, Arial, Helvetica, sans-serif;
+	background: #fefefe;
+	font-size: 16px;
+	font-size: 1.6rem;
+}
+
+.main {
+	padding: 25px;
+	padding: 2.5rem;
+	max-width: 120rem;
+	margin: 0 auto;
+}
+
+.equal {
+  display: flex;
+  display: -webkit-flex;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+  .row.equal {
+    display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+/**************************
+*	_1 = HEADER 			
+**************************/
+
+.navbar-nav > li > a {
+	font-weight: normal;
+}
+
+.navbar {
+	padding:0 1em;
+}
+
+
+/**************************
+*	_2 = Content 			
+**************************/
+
+/* Sections */
+.data-section {
+	padding: 5rem 0;
+	border-bottom: 1px solid #dddddd;
+}
+
+.data-section:first-child {
+	padding: 0 0 5rem 0;
+}
+
+.data-section:last-child {
+	border-bottom: none;
+}
+
+
+.section-heading {
+	font-size: 2.8rem;
+	margin-right: 1rem;
+	
+}
+
+.sub-section-heading {
+	margin-top: 2.5rem;
+}
+
+.show-filter {
+	font-size: 2rem;
+}
+
+.new-filter-button {
+	margin-top: 3rem;
+}
+
+/* Cards */
+.data-card, .person-card, .action-card {
+	padding: 1rem 2rem;
+	margin: 1rem 0;
+	border: 1px solid #e1e1e1;
+	border-radius: 8px;
+	background: #ffffff;
+}
+
+.data-card-heading, .person-card-heading, .action-card-heading {
+	font-size: 18px;
+	font-size: 1.8rem;
+	font-weight: normal;
+	margin: 0;
+	padding: 1rem 0;
+}
+
+.data-card-toggle {
+	color: #555555;
+	float: right;
+	font-weight: bold;
+	font-size: 12px;
+	font-size: 1.2rem;
+	margin: 5px 0px 0px;
+}
+
+.link-no-color, .link-no-color:focus, .link-no-color:hover {
+	color:#333333;
+	text-decoration: none;
+}
+
+.section-button-group {
+	padding: 1rem 0;
+	margin-bottom: 1rem;
+}
+
+.action-button-group{
+	padding: 1rem 0;
+}
+
+.suggestions-more {
+	margin-top: 3rem;
+	margin-bottom: 3rem;
+}
+
+.service-logo {
+	max-width: 2rem;
+}
+
+.service-row {
+	padding: 1rem 0;
+}
+
+.service-button-group {
+	margin-top: 0.5rem;
+} 
+
+.glyphicon {
+	padding-right: 0.5rem;
+}
+
+.avatar {
+	max-width: 3.5rem;
+}
+
+
+.img-thumbnail {
+	margin: 1rem 0;
+}
+
+.sidebar-panel {
+	margin-top: 6rem;
+}
+
+input[type="radio"] {
+	margin: 0 1rem;
+}
+
+label {
+	font-weight: normal;
+}
+
+/* modal */
+.fade {
+	background: rgba(0,0,0,0.5);
+}
+
+.modal-bigger {
+	width: 750px;
+}
+
+ul.data-types-sort {
+    list-style: none;
+    padding: 1rem;
+}
+
+.data-types-sort>li {
+    padding: 1rem;
+    border: 1px solid #e5e5e5;
+    margin: 0.5rem;
+    border-radius: 5px;
+    width: 45%;
+    float: left;
+}
+.data-types-sort>li>input[type="checkbox"] {
+	margin-right: 0.5rem;
+}
+.modal-footer {
+	border: none;
+}
+
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus {
+	background: #d9edf7;
+}
+
+.panel-default > .panel-heading {
+	background-color: #d9edf7;
+}
+
+
+/* material design switch */
+/* https://bootsnipp.com/snippets/xp0QM */
+
+.material-switch > input[type="checkbox"] {
+    display: none;   
+}
+
+.material-switch > label {
+    cursor: pointer;
+    height: 0px;
+    position: relative; 
+    width: 40px;  
+}
+
+.material-switch > label::before {
+    background: rgb(0, 0, 0);
+    box-shadow: inset 0px 0px 10px rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    content: '';
+    height: 16px;
+    margin-top: -8px;
+    position:absolute;
+    opacity: 0.3;
+    transition: all 0.4s ease-in-out;
+    width: 40px;
+}
+.material-switch > label::after {
+    background: rgb(255, 255, 255);
+    border-radius: 16px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+    content: '';
+    height: 24px;
+    left: -4px;
+    margin-top: -8px;
+    position: absolute;
+    top: -4px;
+    transition: all 0.3s ease-in-out;
+    width: 24px;
+}
+.material-switch > input[type="checkbox"]:checked + label::before {
+    background: inherit;
+    opacity: 0.5;
+}
+.material-switch > input[type="checkbox"]:checked + label::after {
+    background: inherit;
+    left: 20px;
+}

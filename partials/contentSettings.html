@@ -1,0 +1,309 @@
+<div class="main">
+	<div class="row data-section" id="/filters">
+		<div class="col-xs-12 col-sm-2">
+			<h3 class="section-heading">Filters</h3>
+			<p><small>Choose what to see when you pick a filter in  <em>Explore Your Data</em> and <em>Quick Actions</em></small></p>
+		</div><!-- end .col -->
+		<div class="col-xs-0 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-7">
+			<div class="row data-section">
+				<h3 class="sub-section-heading">Data to get rid of</h3>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Any type of data older than 10 years
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Photos larger than 5MB
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox" /checked> Photos that are blurry
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Emails with  attachments larger than 5MB 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"> Duplicate documents, files, or photos
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"> Broken files
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<button class="btn btn-default btn-sm new-filter-button " data-toggle="modal" data-target="#NewFilterModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create your own</button>
+			</div><!-- end .row DATA TO GET RID OF -->
+
+
+			<!-- New Filter modal -->
+			<div class="modal fade" id="NewFilterModal" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h3>Create a new combination</h3>
+						</div><!-- end .modal-header -->
+						<div class="modal-body">
+							<div class="btn-group service-button-group" role="group" aria-label="...">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										Choose data type <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn1">Documents</a></li>
+										<li><a href="" id="btn2">Files</a></li>
+										<li><a href="" id="btn3">Photos</a></li>
+										<li><a href="" id="btn4">Applications</a></li>
+										<li><a href="" id="btn4">Folders</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+
+							</div>
+
+							<div class="btn-group service-button-group" role="group" aria-label="...">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										Choose criteria <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn1">Older than…</a></li>
+										<li><a href="" id="btn2">Larger than…</a></li>
+										<li><a href="" id="btn3">Unused</a></li>
+										<li><a href="" id="btn4">Duplicate</a></li>
+										<li><a href="" id="btn4">Sent by…</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+
+							</div>
+
+						</div><!-- end .modal-body -->
+						<div class="modal-footer">
+							<button type="button" class="btn btn-default" data-dismiss="modal">Add New Combination</button>
+						</div><!-- end .modal-footer -->
+					</div><!-- end .modal-content -->
+
+				</div><!-- end .modal-dialog -->
+			</div><!-- end .modal fade -->
+
+			<div class="row data-section">
+				<h3 class="sub-section-heading">Data to organize</h3>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Files outside of folders
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Files with unusual names
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Photos outside of albums
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Folders without a name 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<button class="btn btn-default btn-sm new-filter-button " data-toggle="modal" data-target="#NewFilterModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create your own</button>
+			</div><!-- end .row DATA TO ORGANIZE -->
+
+			<div class="row data-section">
+				<h3 class="sub-section-heading">Private information</h3>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Credit card numbers
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Passport numbers
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Social security numbers
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Passwords 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Physical addresses
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Travel tickets 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Government documents
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Photos with faces 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<button class="btn btn-default btn-sm new-filter-button " data-toggle="modal" data-target="#NewFilterModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create your own</button>
+			</div><!-- end .row PRIVATE DATA -->
+
+						<div class="row data-section">
+				<h3 class="sub-section-heading">Data to back up or sync</h3>
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Frequently accessed documents
+							</label>
+						</div>
+					</div>
+					<div class="col-lg-6">
+						<div class="checkbox" >
+							<label>
+								<input type="checkbox"/ checked> Photos with less than 3 copies
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<div class="row">
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Documents shared by others 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+					<div class="col-lg-6">
+						<div class="checkbox">
+							<label>
+								<input type="checkbox"> Documents copied to external hard disk 
+							</label>
+						</div>
+					</div><!-- /.col-lg-6 -->
+				</div><!-- end .row -->
+				<button class="btn btn-default btn-sm new-filter-button " data-toggle="modal" data-target="#NewFilterModal"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Create your own</button>
+			</div><!-- end .row BACKUP -->
+		</div><!-- end .col-->
+	</div><!-- end .row -->
+
+	<div class="row data-section">
+		<div class="col-xs-12 col-sm-2">
+			<h3 class="section-heading">Accounts</h3>
+			<p><small>Manage what Data Dashboard has access to</small></p>
+			<button class="btn btn-default btn-sm"><span class="glyphicon glyphicon-plus" aria-hidden="true"></span>Add an account</button>
+		</div><!-- end .col -->
+		<div class="col-xs-0 col-sm-1"></div>
+		<div class="col-xs-12 col-sm-7">
+			<div class="row">
+				<h3 class="sub-section-heading">Devices</h3>
+				<table class="table table-hover">
+					<tr>
+					</tr>
+					<tr>
+						<td>Macbook Laptop</td>
+						<td>(<em>you're using it right now!</em>)  <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Disconnect</button></div></td>
+
+					</tr>
+					<tr>
+						<td>iPhone 5s</td>
+						<td> <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Disconnect</button></div>
+						</td>
+					</tr>			
+				</table>
+				<h3 class="sub-section-heading">Cloud accounts</h3>
+				<table class="table table-hover">
+					<tr>
+					</tr>
+					<tr>
+						<td><img src="./images/icloud.png" class="service-logo" alt="iCloud"> <a href="">iCloud</a></td>
+						<td> <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Disconnect</button></div></td>
+
+					</tr>
+					<tr>
+						<td><img src="./images/dropbox.png" class="service-logo" alt="Dropbox"> <a href="">Dropbox</a></td>
+						<td> <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Disconnect</button></div>
+						</td>
+					</tr>	
+					<tr>
+						<td><img src="./images/drive.png" class="service-logo" alt="Google Drive"> <a href="">Google</a></td>
+						<td>(Google Drive, Gmail) <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove" aria-hidden="true"></span> Disconnect</button></div>
+						</td>
+					</tr>		
+				</table>				
+			</div>
+
+		</div>
+	</div>
+
+
+</div><!-- end .main -->

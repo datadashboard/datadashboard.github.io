@@ -1,0 +1,512 @@
+<div class="col-xs-12 col-sm-3" >
+<div class="row affix">
+        <div class="col-xs-12">
+            <div class="panel panel-default sidebar-panel">
+                <!-- Default panel contents -->
+                <div class="panel-heading"><strong>Choose what to see</strong></div>
+            
+                <!-- List group -->
+
+                <ul class="nav nav-pills nav-stacked">
+  					<li class="{{ActionRemoveVisible == true ? 'active' : 'not-active' }}" ng-click="showActionRemove()"><a href="">Data I could get rid of</a></li>
+  					<li class="{{ActionOrganizeVisible == true ? 'active' : 'not-active' }}" ng-click="showActionOrganize()"><a href="">Data I could organize</a></li>
+  					<li class="{{ActionSensitiveVisible == true ? 'active' : 'not-active' }}" ng-click="showActionSensitive()"><a href="">Private information</a></li>
+  					<li class="{{ActionSyncVisible == true ? 'active' : 'not-active' }}" ng-click="showActionSync()"><a href="">Data to back up or sync</a></li>
+  					<li class="{{showActionAll == true ? 'active' : 'not-active' }}" ng-click="showActionAll()"><a href="">Everything</a></li>
+				</ul>
+               
+            </div> 
+ 			<button class="btn btn-default"><span class="glyphicon glyphicon-cog" aria-hidden="true"></span><a href="#settings#filters" target="_self"> Change how these filters work</a></button>
+        </div>
+    </div>
+
+</div><!-- end .col -->
+
+
+<div class="col-xs-12 col-sm-9">
+	<div id="suggestions">
+		<div class="row">
+			<div class="col-xs-12">
+				<h3 class="section-heading">Quick actions for your data</h3>
+				
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionOrganizeVisible||AllDefault">
+			<div class="col-xs-12">
+				<div class="action-card">
+					<h3 class="action-card-heading">Rename documents
+						<button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</h3>
+					<p>4 documents with unusual or empty names:</p>
+
+					<table class="table table-hover">
+						<tr>
+							<th>Current name</th>
+							<th>Suggested name</th>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">736gh4jh.pdf</a></td>
+							<td>April statement YourBank.pdf  <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Change</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Rename</button></div></td>
+
+						</tr>
+						<tr>
+							<td><img src="./images/files/doc.png" class="service-logo" alt=""> <a href="">untitled.doc</a></td>
+							<td>Draft of program v1.doc <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Change</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Rename</button></div>
+							</td>
+						</tr>
+						<tr>
+							<td><img src="./images/files/xls.png" class="service-logo" alt=""> <a href="">ff73467.xls</a></td>
+							<td>Budget 2019 <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Change</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Rename</button></div>
+							</td>
+						</tr>
+						<tr>
+							<td><img src="./images/files/txt.png" class="service-logo" alt=""> <a href="">untitled.txt</a></td>
+							<td>Meeting notes June 14 <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Change</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Rename</button></div>
+							</td>
+						</tr>
+					</table>
+
+
+
+					<div class="btn-toolbar action-button-group" role="toolbar" aria-label="...">
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-time" aria-hidden="true"></span> Snooze <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Tomorrow</a></li>
+									<li><a href="" id="btn2">In 1 week</a></li>
+									<li><a href="" id="btn3">In 1 month</a></li>
+									<li><a href="" id="btn4">Pick a time…</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+						<div class="btn-group pull-right" role="group" aria-label="...">						
+
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Rename all</button>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Rename all and do this in the future <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Ask me before renaming similar files</a></li>
+									<li><a href="" id="btn2">Automatically rename similar files</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+
+						</div>
+					</div><!-- end btn-toolbar -->
+				</div><!-- end .action-card -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionRemoveVisible||AllDefault">
+			<div class="col-xs-12">
+				<div class="action-card">
+					<h3 class="action-card-heading">Remove duplicate documents and free up to 45 MB
+						<button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</h3>
+
+					<table class="table table-hover">
+						<tr>
+							<th>Document to keep</th>
+							<th>Duplicate to remove</th>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">paris-guide.pdf</a></td>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">paris-guide(1).pdf</a> (32 MB)  <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Remove</button></div></td>
+
+						</tr>
+						<tr>
+							<td><img src="./images/files/doc.png" class="service-logo" alt=""> <a href="">letter-draft.doc</a></td>
+							<td><img src="./images/files/doc.png" class="service-logo" alt=""> <a href="">letter.doc</a> (13 MB) <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Remove</button></div></td>
+						</tr>
+					</table>
+
+
+					<div class="btn-toolbar action-button-group" role="toolbar" aria-label="...">
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-time" aria-hidden="true"></span> Snooze <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Tomorrow</a></li>
+									<li><a href="" id="btn2">In 1 week</a></li>
+									<li><a href="" id="btn3">In 1 month</a></li>
+									<li><a href="" id="btn4">Pick a time…</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+						<div class="btn-group pull-right" role="group" aria-label="...">
+							
+
+
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-remove-sign" aria-hidden="true"></span> Remove all</button>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Remove all and do this in the future <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Ask me before removing similar files</a></li>
+									<li><a href="" id="btn2">Automatically remove similar files</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+					</div><!-- end btn-toolbar -->
+
+				</div><!-- end .action-card -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionSyncVisible||AllDefault">
+			<div class="col-xs-12">
+				<div class="action-card">
+					<h3 class="action-card-heading">Back up and sync recent documents
+						<button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</h3>
+					<p>3 recent documents you can back up and sync:</p>
+
+					<table class="table table-hover">
+						<tr>
+							<th>Document</th>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">Paris guide.pdf</a>
+								<div class="btn-group pull-right">
+									<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Back up <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn2">On iCloud</a></li>
+										<li><a href="" id="btn1">On Google Drive</a></li>
+										<li><a href="" id="btn2">On Dropbox</a></li>
+										<li><a href="" id="btn3">Schedule hard disk backup</a></li>
+										<li><a href="" id="btn4">Pick another method…</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+							</td>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">bank-statement.pdf</a>
+								<div class="btn-group pull-right">
+									<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Back up <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn2">On iCloud</a></li>
+										<li><a href="" id="btn1">On Google Drive</a></li>
+										<li><a href="" id="btn2">On Dropbox</a></li>
+										<li><a href="" id="btn3">Schedule hard disk backup</a></li>
+										<li><a href="" id="btn4">Pick another method…</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+							</td>
+						</tr>
+						<tr>
+							<td><img src="./images/files/doc.png" class="service-logo" alt=""> <a href="">recipes.doc</a>
+								<div class="btn-group pull-right">
+									<button type="button" class="btn btn-default btn-xs dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Back up <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn2">On iCloud</a></li>
+										<li><a href="" id="btn1">On Google Drive</a></li>
+										<li><a href="" id="btn2">On Dropbox</a></li>
+										<li><a href="" id="btn3">Schedule hard disk backup</a></li>
+										<li><a href="" id="btn4">Pick another method…</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+							</td>
+						</tr>
+
+					</table>					
+
+
+					<div class="btn-toolbar action-button-group" role="toolbar" aria-label="...">
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-time" aria-hidden="true"></span> Snooze <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Tomorrow</a></li>
+									<li><a href="" id="btn2">In 1 week</a></li>
+									<li><a href="" id="btn3">In 1 month</a></li>
+									<li><a href="" id="btn4">Pick a time…</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+						<div class="btn-group pull-right" role="group" aria-label="...">						
+							<div class="btn-group">
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-cloud-upload" aria-hidden="true"></span> Back up all<span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn2">On iCloud</a></li>
+										<li><a href="" id="btn1">On Google Drive</a></li>
+										<li><a href="" id="btn2">On Dropbox</a></li>
+										<li><a href="" id="btn3">Schedule hard disk backup</a></li>
+										<li><a href="" id="btn4">Pick another method…</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+								<div class="btn-group">
+									<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+										<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Back up all and do this in the future <span class="caret"></span>
+									</button>
+									<ul class="dropdown-menu" role="menu">
+										<li><a href="" id="btn1">Ask me before backing up similar files</a></li>
+										<li><a href="" id="btn2">Automatically back up similar files</a></li>
+									</ul>
+								</div><!-- end .btn-group -->
+							</div>
+
+						</div>
+					</div><!-- end btn-toolbar -->
+
+				</div><!-- end .action-card -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionOrganizeVisible||AllDefault">
+			<div class="col-xs-12">
+				<div class="action-card">
+					<h3 class="action-card-heading">Move files into folders
+						<button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+					</h3>
+
+					<p>2 files you can move into folders:</p>
+
+					<table class="table table-hover">
+						<tr>
+							<th>Document</th>
+							<th>Suggested folder</th>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">itinerary.pdf</a></td>
+							<td>Laptop › Documents › travel › 2019 › Paris<div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Change</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Move</button></div></td>
+
+						</tr>
+						<tr>
+							<td><img src="./images/files/doc.png" class="service-logo" alt=""> <a href="">Muffin recipe.doc</a></td>
+							<td>Laptop › Documents › food <div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Change</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Move</button></div>
+							</td>
+						</tr>
+					</table>
+
+
+
+					<div class="btn-toolbar action-button-group" role="toolbar" aria-label="...">
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-time" aria-hidden="true"></span> Snooze <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Tomorrow</a></li>
+									<li><a href="" id="btn2">In 1 week</a></li>
+									<li><a href="" id="btn3">In 1 month</a></li>
+									<li><a href="" id="btn4">Pick a time…</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+						<div class="btn-group pull-right" role="group" aria-label="...">						
+
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-arrow-right" aria-hidden="true"></span> Move all</button>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Move all and do this in the future <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Ask me before moving similar files</a></li>
+									<li><a href="" id="btn2">Automatically move similar files</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+
+						</div>
+					</div><!-- end btn-toolbar -->
+
+
+
+
+				</div><!-- end .action-card -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionOrganizeVisible||AllDefault">
+			<div class="col-xs-12">
+				<div class="action-card">
+					<h3 class="action-card-heading">Archive old message conversations
+						<button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>	
+					</h3>
+					<p>3 inactive conversations:</p>
+
+					<table class="table table-hover">
+						<tr>
+							<th>Conversation</th>
+							<th>Last active</th>
+							<th></th>
+						</tr>
+						<tr>
+							<td><img src="./images/whatsapp.png" alt="WhatsApp" class="service-logo"> <a href="">Bob</a>: "have a safe trip!"</td>
+							<td>2 months ago</td>
+							<td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Archive</button></td>
+						</tr>
+						<tr>
+							<td><img src="./images/whatsapp.png" alt="WhatsApp" class="service-logo"> <a href="">birthday secret group!!</a>: "that was really fun!! hope to…"</td>
+							<td>1 month ago</td>
+							<td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Archive</button></td>
+						</tr>
+						<tr>
+							<td><img src="./images/messenger.png" alt="Messenger" class="service-logo"> <a href="">Sarah, Alice, and 3 others</a>: "yes, let's check again anot…"</td>
+							<td>1 month ago</td>
+							<td><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Archive</button></td>
+						</tr>
+					</table>
+
+
+
+
+
+					<div class="btn-toolbar action-button-group" role="toolbar" aria-label="...">
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-time" aria-hidden="true"></span> Snooze <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Tomorrow</a></li>
+									<li><a href="" id="btn2">In 1 week</a></li>
+									<li><a href="" id="btn3">In 1 month</a></li>
+									<li><a href="" id="btn4">Pick a time…</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+						</div>
+						
+						<div class="btn-group pull-right" role="group" aria-label="...">
+							
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-ok-sign" aria-hidden="true"></span> Archive all</button>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Archive all and do this in the future <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Ask me before archiving inactive conversations</a></li>
+									<li><a href="" id="btn2">Automatically archive inactive conversations</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+					</div><!-- end btn-toolbar -->
+
+				</div><!-- end .action-card -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionSensitiveVisible||AllDefault">
+			<div class="col-xs-12">
+				<div class="action-card">
+					<h3 class="action-card-heading">Private information in cloud documents
+						<button type="button" class="close pull-right" aria-label="Close"><span aria-hidden="true">&times;</span></button>	
+					</h3>
+					
+					<p><img src="./images/dropbox.png" class="service-logo" alt=""> On Dropbox:</p>
+					<table class="table table-hover">
+						<tr>
+							<th>Document</th>
+							<th>Private information</th>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">visa-application.pdf</a></td>
+							<td>Passport numbers and credit card numbers<div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Encrypt</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Remove from Dropbox</button></div></td>
+
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">AirCanada_ticket125Z.pdf</a></td>
+							<td>Credit card numbers<div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Encrypt</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Remove from Dropbox</button></div></td>
+
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">reservation16xjx.pdf</a></td>
+							<td>Credit card numbers<div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Encrypt</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Remove from Dropbox</button></div></td>
+
+						</tr>
+					</table>
+
+					<p><img src="./images/icloud.png" class="service-logo" alt=""> On iCloud:</p>
+					<table class="table table-hover">
+						<tr>
+							<th>Document</th>
+							<th>Private information</th>
+						</tr>
+						<tr>
+							<td><img src="./images/files/pdf.png" class="service-logo" alt=""> <a href="">itinerary.2007.pdf</a></td>
+							<td>Passport numbers<div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Encrypt</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Remove from iCloud</button></div></td>
+
+						</tr>
+						<tr>
+							<td><img src="./images/files/xls.png" class="service-logo" alt=""> <a href="">budget.xls</a></td>
+							<td>Credit card numbers<div class="btn-group pull-right" role="group" aria-label="..."><button type="button" class="btn btn-default btn-xs"><span class="glyphicon glyphicon-erase" aria-hidden="true"></span> Encrypt</button><button type="button" class="btn btn-xs btn-default"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Remove from iCloud</button></div></td>
+
+						</tr>
+					</table>
+
+
+
+					<div class="btn-toolbar action-button-group" role="toolbar" aria-label="...">
+						<div class="btn-group" role="group" aria-label="...">
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-time" aria-hidden="true"></span> Snooze <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Tomorrow</a></li>
+									<li><a href="" id="btn2">In 1 week</a></li>
+									<li><a href="" id="btn3">In 1 month</a></li>
+									<li><a href="" id="btn4">Pick a time…</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+						</div>
+						
+						<div class="btn-group pull-right" role="group" aria-label="...">
+							
+							<button type="button" class="btn btn-default"><span class="glyphicon glyphicon-cloud-download" aria-hidden="true"></span> Remove all</button>
+
+							<div class="btn-group">
+								<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown">
+									<span class="glyphicon glyphicon-repeat" aria-hidden="true"></span> Remove all and do this in the future <span class="caret"></span>
+								</button>
+								<ul class="dropdown-menu" role="menu">
+									<li><a href="" id="btn1">Ask me before removing similar documents</a></li>
+									<li><a href="" id="btn2">Automatically remove similar documents</a></li>
+								</ul>
+							</div><!-- end .btn-group -->
+
+						</div>
+					</div><!-- end btn-toolbar -->
+
+				</div><!-- end .action-card -->
+			</div><!-- end .col -->
+		</div><!-- end .row -->
+
+		<div class="row" ng-show="ActionOrganizeVisible||ActionSensitiveVisible||ActionRemoveVisible||ActionSyncVisible">
+			<button class="btn btn-primary btn-lg center-block text-center suggestions-more">Show more suggestions</button>	
+		</div>
+
+
+	</div><!-- end #suggestions -->
+</div>

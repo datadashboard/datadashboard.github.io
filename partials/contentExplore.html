@@ -1,0 +1,534 @@
+<div class="col-xs-12 col-sm-3">
+	<div class="row affix">
+		<div class="col-xs-12">
+			<div class="panel panel-default sidebar-panel">
+				<!-- Default panel contents -->
+				<div class="panel-heading"><strong>Choose what to see</strong></div>
+
+				<!-- List group -->
+
+				<ul class="nav nav-pills nav-stacked">
+  					<li class="{{ActionRemoveVisible == true ? 'active' : 'not-active' }}" ng-click="exploreFilter = {dataType: 'getrid'};showActionRemove()"><a href="">Data I could get rid of</a></li>
+  					<li class="{{ActionOrganizeVisible == true ? 'active' : 'not-active' }}" ng-click="exploreFilter = {dataType: 'organize'};showActionOrganize()"><a href="">Data I could organize</a></li>
+  					<li class="{{ActionSensitiveVisible == true ? 'active' : 'not-active' }}" ng-click="exploreFilter = {dataType: 'private'};showActionSensitive()"><a href="">Private information</a></li>
+  					<li class="{{ActionSyncVisible == true ? 'active' : 'not-active' }}" ng-click="exploreFilter = {dataType: 'backup'};showActionSync()"><a href="">Data to back up or sync</a></li>
+  					<li class="{{showActionAll == true ? 'active' : 'not-active' }}"ng-click="exploreFilter = {dataType: 'all'};showActionAll()"><a href="">Everything</a></li>
+				</ul>
+
+
+
+
+
+			</div>
+			<button class="btn btn-default">
+				<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
+				<a href="#settings#filters" target="_self">Change how these filters work</a>
+			</button>
+		</div>
+	</div>
+
+</div>
+<!-- end .col -->
+
+
+
+<div class="col-xs-12 col-sm-9">
+
+	<div id="all-data" class="data-section">
+		<div class="row">
+			<div class="col-xs-12">
+				<div>
+					<h3 class="section-heading">Explore Your Data
+						<span class="btn-group" role="group" aria-label="...">
+							<button type="button" class="btn btn-default" data-toggle="modal" data-target="#sortModal">
+								<span class="glyphicon glyphicon-cog" aria-hidden="true"></span> Sort or hide the types of data you see</button>
+							</span>
+						</h3>
+
+					</div>
+				</div>
+				<!-- end .col -->
+
+			</div>
+			<!-- end .row -->
+
+			<!-- Sort modal -->
+			<div class="modal fade" id="sortModal" role="dialog">
+				<div class="modal-dialog">
+
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">&times;</button>
+							<h4 class="modal-title">Sort or hide data types</h4>
+						</div>
+						<!-- end .modal-header -->
+						<div class="modal-body">
+							<p>Check what data types you want to see or drag them around to reorder them</p>
+							<ul class="data-types-sort">
+								<li>
+									<input type="checkbox" / checked> Photos
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Screenshots
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Emails
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Text Documents
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Presentations
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Spreadsheets
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Videos
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Audio
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Folders
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Contacts
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Applications
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Messages
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Cache and logs
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Bookmarks
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Ebooks
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" / checked> Tracking Data
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Browser history
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Passwords
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								
+								<li>
+									<input type="checkbox" /> Notes and reminders
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+								<li>
+									<input type="checkbox" /> Games
+									<a href="">
+										<span class="glyphicon glyphicon-move pull-right" aria-hidden="true"></span>
+									</a>
+								</li>
+							</ul>
+						</div>
+						<!-- end .modal-body -->
+						<div class="modal-footer">
+							
+						</div>
+						<!-- end .modal-footer -->
+					</div>
+					<!-- end .modal-content -->
+
+				</div>
+				<!-- end .modal-dialog -->
+			</div>
+			<!-- end .modal fade -->
+
+			<div class="row equal">
+				<div id="photos" class="col-sm-12 col-md-6">
+					<a href="" ng-model="collapseAllPhotos" ng-click="collapseAllPhotos=!collapseAllPhotos" class="link-no-color">
+						<div class="data-card">
+							<h3 class="data-card-heading" ng-controller="exploreFilter">
+								<span class="glyphicon glyphicon-picture" aria-hidden="true"></span> Photos <span class="badge"  ng-repeat="photoC in photosCount | filter:exploreFilter">{{photoC.count}}</span>
+
+								
+							</h3>
+							<div class="data-card-collapse" ng-hide="collapseAllPhotos">
+								<p>2765 photos in total <small>(<a href="">browse all</a>)</small></p>
+								<ul ng-controller="exploreFilter">
+									<li ng-repeat="photo in photos | filter:exploreFilter">
+										<a href="" data-toggle="modal" data-target="#imageModel">{{photo.name}}</a>
+										<!-- Modal -->
+										<div class="modal fade" id="imageModel" tabindex="-1" role="dialog" aria-labelledby="imageModelLabel" aria-hidden="true">
+											<div class="modal-dialog modal-bigger" role="document">
+												<div class="modal-content">
+													<div class="modal-body">
+														<img src="./images/collage_pics.png">
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</a>
+				</div>
+				<!-- end #photos -->
+
+				<div id="emails" class="col-sm-12 col-md-6">
+					<a href="" ng-model="collapseAllEmails" ng-click="collapseAllEmails=!collapseAllEmails" class="link-no-color">
+						<div class="data-card">
+							<h3 class="data-card-heading" ng-controller="exploreFilter">
+								<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span> Emails <span class="badge" ng-repeat="emailsC in emailsCount | filter:exploreFilter">{{emailsC.count}}</span>
+
+							
+							</h3>
+
+							<div class="data-card-collapse" ng-hide="collapseAllEmails">
+								<p>6847 emails in total <small>(<a href="">browse all</a>)</small></p>
+								<ul ng-controller="exploreFilter">
+									<li ng-repeat="email in emails | filter:exploreFilter">
+										<a href="" data-toggle="modal" data-target="#emailModal">{{email.name}}</a>
+										<!-- Modal -->
+										<div class="modal fade" id="emailModal" tabindex="-1" role="dialog" aria-labelledby="emailModalLabel" aria-hidden="true">
+											<div class="modal-dialog" role="document">
+												<div class="modal-content">
+													<div class="modal-body">
+														<img src="./images/collage_emails.png">
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+
+							</div>
+						</div>
+					</a>
+				</div>
+				<!-- end #emails -->
+
+				<div id="word-docs" class="col-sm-12 col-md-6">
+					<a href="" ng-model="collapseAllWord" ng-click="collapseAllWord=!collapseAllWord" class="link-no-color">
+						<div class="data-card">
+							<h3 class="data-card-heading" ng-controller="exploreFilter">
+								<span class="glyphicon glyphicon-file" aria-hidden="true"></span> Text Documents <span class="badge"ng-repeat="docsC in docCount | filter:exploreFilter">{{docsC.count}}</span>
+
+								
+							</h3>
+
+							<div class="data-card-collapse" ng-hide="collapseAllWord">
+								<p>365 text documents in total <small>(<a href="">browse all</a>)</small></p>
+								<ul ng-controller="exploreFilter">
+									<li ng-repeat="doc in documents | filter:exploreFilter">
+										<a href="" data-toggle="modal" data-target="#docModal">{{doc.name}}</a>
+										<!-- Modal -->
+										<div class="modal fade" id="docModal" tabindex="-1" role="dialog" aria-labelledby="docModalLabel" aria-hidden="true">
+											<div class="modal-dialog modal-bigger" role="document">
+												<div class="modal-content">
+													<div class="modal-body">
+														<img src="./images/pop-up-docs.png" style="max-width:100%;">
+													</div>
+												</div>
+											</div>
+										</div>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</a>
+				</div>
+				<!-- end #word-docs -->
+
+				<div id="videos" class="col-sm-12 col-md-6">
+					<a href="" ng-model="collapseAllVideo" ng-click="collapseAllVideo=!collapseAllVideo" class="link-no-color">
+						<div class="data-card">
+							<h3 class="data-card-heading" ng-controller="exploreFilter">
+								<span class="glyphicon glyphicon-facetime-video" aria-hidden="true"></span> Videos <span class="badge"ng-repeat="vidC in videoCount | filter:exploreFilter">{{vidC.count}}</span>
+
+								
+							</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllVideo">
+							<p>122 videos in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="video in videos | filter:exploreFilter">
+									<a href="" data-toggle="modal" data-target="#videoModal">{{video.name}}</a>
+									<!-- Modal -->
+									<div class="modal fade" id="videoModal" tabindex="-1" role="dialog" aria-labelledby="videoModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+													<img src="./images/collage_videos.png">
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #videos -->
+
+			<div id="folders" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllFolders" ng-click="collapseAllFolders=!collapseAllFolders" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-folder-open" aria-hidden="true"></span> Folders <span class="badge"ng-repeat="foldC in folderCount | filter:exploreFilter">{{foldC.count}}</span>
+
+
+							
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllFolders">
+							<p>178 folders in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="folder in folders | filter:exploreFilter">
+									<a href="" data-toggle="modal" data-target="#folderModal">{{folder.name}}</a>
+									<!-- Modal -->
+									<div class="modal fade" id="folderModal" tabindex="-1" role="dialog" aria-labelledby="folderModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+													<img src="./images/collage_folders.png">
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #folders -->
+
+			<div id="contacts" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllContacts" ng-click="collapseAllContacts=!collapseAllContacts" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-user" aria-hidden="true"></span> Contacts <span class="badge"ng-repeat="contC in contactCount | filter:exploreFilter">{{contC.count}}</span>
+
+							
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllContacts">
+							<p>436 contacts in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="contact in contacts | filter:exploreFilter">
+									<a href="" data-toggle="modal" data-target="#contactsModal">{{contact.name}}</a>
+									<!-- Modal -->
+									<div class="modal fade" id="contactsModal" tabindex="-1" role="dialog" aria-labelledby="contactsModalLabel" aria-hidden="true">
+										<div class="modal-dialog" role="document">
+											<div class="modal-content">
+												<div class="modal-body">
+													<img src="./images/collage_contacts.png">
+												</div>
+											</div>
+										</div>
+									</div>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #contacts -->
+
+			<div id="applications" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllApplications" ng-click="collapseAllApplications=!collapseAllApplications" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-th-large" aria-hidden="true"></span> Applications <span class="badge"ng-repeat="appC in appCount | filter:exploreFilter">{{appC.count}}</span>
+
+				
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllApplications">
+							<p>67 applications in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="app in applications | filter:exploreFilter">
+									<a href="">{{app.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #applications -->
+
+			<div id="Messages" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllMessages" ng-click="collapseAllMessages=!collapseAllMessages" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-comment" aria-hidden="true"></span> Messages <span class="badge"ng-repeat="msgC in messageCount | filter:exploreFilter">{{msgC.count}}</span>
+
+						
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllMessages">
+							<p>4637 messages in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="message in messages | filter:exploreFilter">
+									<a href="">{{message.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #Messages -->
+
+			<div id="Logs" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllLogs" ng-click="collapseAllLogs=!collapseAllLogs" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> Cache and Logs <span class="badge"ng-repeat="logC in logCount | filter:exploreFilter">{{logC.count}}</span>
+
+						
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllLogs">
+							<p>8745 cache and log items in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="log in logs | filter:exploreFilter">
+									<a href="">{{log.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #Logs -->
+
+			<div id="Bookmarks" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllBookmarks" ng-click="collapseAllBookmarks=!collapseAllBookmarks" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-bookmark" aria-hidden="true"></span> Bookmarks <span class="badge"ng-repeat="bookmarkC in bookmarkCount | filter:exploreFilter">{{bookmarkC.count}}</span>
+
+						
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllBookmarks">
+							<p>87 bookmarks in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="bookmark in bookmarks | filter:exploreFilter">
+									<a href="">{{bookmark.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #Bookmarks -->
+
+			<div id="Ebooks" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllEbooks" ng-click="collapseAllEbooks=!collapseAllEbooks" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-book" aria-hidden="true"></span> Ebooks <span class="badge"ng-repeat="ebookC in ebookCount | filter:exploreFilter">{{ebookC.count}}</span>
+
+					
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllEbooks">
+							<p>56 ebooks in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="ebook in ebooks | filter:exploreFilter">
+									<a href="">{{ebook.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #Ebooks -->
+
+			<div id="Tracking" class="col-sm-12 col-md-6">
+				<a href="" ng-model="collapseAllTracking" ng-click="collapseAllTracking=!collapseAllTracking" class="link-no-color">
+					<div class="data-card">
+						<h3 class="data-card-heading" ng-controller="exploreFilter">
+							<span class="glyphicon glyphicon-map-marker" aria-hidden="true"></span> Tracking Data <span class="badge"ng-repeat="trackC in trackCount | filter:exploreFilter">{{trackC.count}}</span>
+
+					
+						</h3>
+
+						<div class="data-card-collapse" ng-hide="collapseAllTracking">
+							<p>2897 tracking items in total <small>(<a href="">browse all</a>)</small></p>
+							<ul ng-controller="exploreFilter">
+								<li ng-repeat="track in tracks | filter:exploreFilter">
+									<a href="">{{track.name}}</a>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</a>
+			</div>
+			<!-- end #Tracking -->
+
+		</div>
+		<!-- end #all-data -->
+	</div>
+</div>
