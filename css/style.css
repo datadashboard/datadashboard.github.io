@@ -59,6 +59,10 @@ body {
 	padding:0 1em;
 }
 
+.top-menu {
+	max-width: 120rem;
+}
+
 
 /**************************
 *	_2 = Content 			
